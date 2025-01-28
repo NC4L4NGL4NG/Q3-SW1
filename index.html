@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Lexend+Giga:wght@100..900&display=swap" rel="stylesheet">
+    <title>Seatwork 1</title>
+    <style>
+        body {
+  font-family: "Lexend Giga", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/15327860358841.5a49e9f390746.gif);
+            color:blue;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            background: lightcyan;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .diagram {
+            margin: 20px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .area-button {
+            background-color: #ffd369;
+            color: #000;
+        }
+
+        .circumference-button {
+            background-color: #82caff;
+            color: #000;
+        }
+
+        .refresh-button {
+            background-color: #ff6f6f;
+            color: #fff;
+        }
+
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 20px;
+            background-color: #ffe4c4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AREA AND CIRCUMFERENCE OF A CIRCLE</h1>
+        <p>Find the area and the circumference of a circle whose radius is 10.25cm.</p>
+        <div class="diagram">
+            <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Circumference-of-a-Circle-2.png" alt="Circle Diagram" width="500">
+        </div>
+        <div class="button-container">
+            <button class="area-button" onclick="showArea()">AREA</button>
+            <button class="circumference-button" onclick="showCircumference()">CIRCUMFERENCE</button>
+            <button class="refresh-button" onclick="refreshPage()">REFRESH PAGE</button>
+        </div>
+        <div class="result" id="result"> </div>
+    </div>
+
+    <script>
+        const radius = 10.25;
+
+        function showArea() {
+            const area = (Math.PI * Math.pow(radius, 2)).toFixed(2);
+            document.getElementById('result').textContent = `The area of the circle is ${area} cm²`;
+        }
+
+        function showCircumference() {
+            const circumference = (2 * Math.PI * radius).toFixed(2);
+            document.getElementById('result').textContent = `The circumference of the circle is ${circumference} cm`;
+        }
+
+        function refreshPage() {
+            document.getElementById('result').textContent = '';
+        }
+    </script>
+</body>
+</html>
+
